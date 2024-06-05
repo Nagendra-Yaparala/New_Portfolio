@@ -5,6 +5,7 @@ export default function Home() {
     <main >
       <div>
         <h1 className="text-red-500">Hello</h1>
+        <h1 className="text-green">New Portfolio</h1>
       </div>
     </main>
   );
