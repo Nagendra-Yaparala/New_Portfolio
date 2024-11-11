@@ -17,11 +17,11 @@ const page = () => {
         whileInView={{ opacity: 1 }}>
         <Navbar/>
         <Hero/>
-{/*         <Card/> */}
+
 <About/>
-<MySkills/>
+{<MySkills/> }
 <Portfolio/>
-        </motion.div>
+      </motion.div>
     </div>
   )
 }

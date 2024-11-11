@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card } from 'antd';
 import Image from 'next/image';
+import logo3 from '@/images/logo3.png'
 
 const { Meta } = Card;
 
@@ -15,7 +16,7 @@ const App = () => (
     cover={
       <Image
         alt="example"
-        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+        src={logo3}
         width={240}  // Set the desired width for the image
         height={160} // Set the desired height for the image
         style={{ objectFit: 'cover' }} // Optional: To maintain aspect ratio and fit the container

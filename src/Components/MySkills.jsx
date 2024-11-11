@@ -31,27 +31,10 @@ const skills = [
   {
     id: 5,
     name: "Next.js",
-    image: "", // Empty image path
-    description: "React framework that enables server-side rendering and static site generation."
-  },
-  {
-    id: 6,
-    name: "Tailwind CSS",
-    image: "path/to/tailwindcss-icon.png",
-    description: "Utility-first CSS framework for rapidly building custom user interfaces."
-  },
-  {
-    id: 7,
-    name: "Git",
-    image: "path/to/git-icon.png",
-    description: "Version control system for tracking changes in source code."
-  },
-  {
-    id: 8,
-    name: "GitHub",
-    image: "path/to/github-icon.png",
-    description: "Platform for hosting and collaborating on Git repositories."
+    image:"https://img.icons8.com/officel/16/react.png",
+    description: "React.js library for making simple react complex features"
   }
+ 
 ];
 
 const MySkills = () => {

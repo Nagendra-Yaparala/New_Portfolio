@@ -12,10 +12,10 @@ const Hero = () => {
         <p className='text-xl'>Frontend Developer</p>
         <Button style={{backgroundColor:'transparent',padding:'3vh',color:'#FFA62F', borderColor:'#FFA62F',fontSize:'3vh'}} className='font-medium '>contact me</Button>
         </div>
-        <Image 
+        {/* <Image 
           src={top} 
           alt="Top Image" 
-        />
+        /> */}
         <div className='absolute bottom-0 right-0'>
            
         </div>
