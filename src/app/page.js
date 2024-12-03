@@ -7,6 +7,9 @@ import About from '@/Components/About'
 import MySkills from '@/Components/MySkills'
 import Portfolio from '@/Components/Portfolio'
 import { motion} from 'framer-motion'
+import ProjectCard from '@/Components/ProjectCard'
+import Contact from '@/Components/Contact'
+import  Footer  from '@/Components/Footer'
 
 const page = () => {
 
@@ -21,6 +24,9 @@ const page = () => {
 <About/>
 {<MySkills/> }
 <Portfolio/>
+<ProjectCard/>
+<Contact/>
+<Footer/>
       </motion.div>
     </div>
   )

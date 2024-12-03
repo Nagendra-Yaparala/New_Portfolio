@@ -1,4 +1,4 @@
-'use client' // Add this if using Next.js app directory structure
+'use client'; // Add this if using Next.js app directory structure
 
 import React from 'react';
 import Image from 'next/image';
@@ -7,7 +7,7 @@ const skills = [
   {
     id: 1,
     name: "HTML",
-    image: "https://img.icons8.com/color/48/html-5--v1.png", 
+    image: "https://img.icons8.com/color/48/html-5--v1.png",
     description: "Markup language for creating web pages."
   },
   {
@@ -25,42 +25,52 @@ const skills = [
   {
     id: 4,
     name: "React",
-    image: "https://img.icons8.com/officel/16/react.png",
+    image: "https://img.icons8.com/officel/80/react.png",
     description: "JavaScript library for building user interfaces."
   },
   {
     id: 5,
     name: "Next.js",
-    image:"https://img.icons8.com/officel/16/react.png",
-    description: "React.js library for making simple react complex features"
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
+    description: "React framework for server-rendered and static web applications."
+  },
+  {
+    id: 6,
+    name: "Tailwind CSS",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+    description: "Utility-first CSS framework for rapidly building custom user interfaces."
+  },
+  {
+    id: 7,
+    name: "Bootstrap",
+    image: "https://img.icons8.com/color/144/bootstrap.png",
+    description: "Popular CSS framework for developing responsive and mobile-first websites."
   }
- 
 ];
 
 const MySkills = () => {
   return (
-    <div className='text-white mx-5 md:mx-40'>
-      <div className='flex justify-center items-center font-semibold text-xl mb-4'>
-        My Skills
-      </div>
-      <div className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-center items-center'>
-        {skills.map((item, index) => (
+    <div className="bg-gray-900 text-white py-10 px-5 md:px-20">
+      <h1 className="text-3xl font-bold text-center mb-8">My Skills</h1>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {skills.map((skill) => (
           <div
-            className='w-40 h-40 rounded-lg mb-4 bg-gradient-to-tl from-gray-600 to-black shadow-md p-5 flex flex-col justify-center items-center'
-            key={index}
+            key={skill.id}
+            className="bg-gradient-to-tl from-gray-800 to-gray-600 rounded-lg shadow-lg p-4 hover:scale-105 transform transition-transform duration-300 flex flex-col items-center text-center"
           >
-            {item.image ? (
+            {skill.image ? (
               <Image
-                src={item.image}
-                alt={`${item.name} icon`}
-                width={48}  // Specify the width according to your needs
-                height={48} // Specify the height according to your needs
-                style={{ objectFit: 'contain' }} // Optional: Keep the image within the specified bounds
+                src={skill.image}
+                alt={`${skill.name} icon`}
+                width={60}
+                height={60}
+                className="mb-4"
               />
             ) : (
-              <div className='text-gray-400'>No image</div> // Placeholder for missing images
+              <div className="text-gray-400 mb-4">No image</div>
             )}
-            <div className='mt-2 text-center'>{item.name}</div>
+            <h2 className="text-lg font-semibold">{skill.name}</h2>
+            <p className="text-gray-400 text-sm mt-2">{skill.description}</p>
           </div>
         ))}
       </div>

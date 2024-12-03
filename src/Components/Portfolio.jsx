@@ -6,7 +6,7 @@ const Portfolio = () => {
   return (
     <div className='mx-40 grid grid-cols-4 text-white'>
        
-      <Card/>
+     
     </div>
   )
 }
