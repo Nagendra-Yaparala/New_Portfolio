@@ -49,7 +49,7 @@ const Contact = () => {
         <div className="space-y-6">
           <h1 className="text-3xl font-bold text-yellow-300">Connect With Me:</h1>
           <p className="text-lg text-gray-300">
-            Feel free to reach out for collaborations, opportunities, or just to say hi! Let's create something amazing together.
+            Feel free to reach out for collaborations, opportunities, or just to say hi! Let &apos;s create something amazing together.
           </p>
           <div className="flex space-x-4 mt-4">
             {/* Social Media Handles (Examples) */}
