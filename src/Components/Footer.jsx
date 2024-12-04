@@ -13,7 +13,7 @@ const Footer = () => {
             </h1>
             <p className="text-sm leading-relaxed">
               Frontend Developer passionate about crafting seamless user
-              experiences and bringing creative ideas to life. Let's build
+              experiences and bringing creative ideas to life. Let&apos;s build
               something remarkable together!
             </p>
           </div>
