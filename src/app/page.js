@@ -10,6 +10,7 @@ import { motion} from 'framer-motion'
 import ProjectCard from '@/Components/ProjectCard'
 import Contact from '@/Components/Contact'
 import  Footer  from '@/Components/Footer'
+import Experience from '@/Components/Experience'
 
 const page = () => {
 
@@ -25,6 +26,7 @@ const page = () => {
 {<MySkills/> }
 <Portfolio/>
 <ProjectCard/>
+<Experience/>
 <Contact/>
 <Footer/>
       </motion.div>

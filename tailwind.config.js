@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,13 +6,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-     colors:{
-      black:{
-        DEFAULT:'#000',
-        100:'#000319',
+      colors: {
+        black: {
+          DEFAULT: '#000',
+          100: '#000319',
+        },
       },
-     },
     },
   },
   plugins: [],
+  important: true, // Add this for debugging
 };
