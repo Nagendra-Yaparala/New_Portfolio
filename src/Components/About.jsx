@@ -36,7 +36,7 @@ const About = () => {
           Beyond coding, I enjoy  
           <span className="font-semibold text-yellow-400"> photography</span> and  
           <span className="font-semibold text-yellow-400"> exploring nature</span>.  
-          I’m always eager to learn new technologies and push the boundaries of web development.
+          I&apos;m always eager to learn new technologies and push the boundaries of web development.
         </motion.p>
 
         {/* Education Section */}
@@ -48,7 +48,7 @@ const About = () => {
         >
           <h2 className="text-2xl font-bold text-yellow-300 mb-4">Education</h2>
           <p className="text-lg">
-            🎓 <span className="font-semibold text-blue-400">Bachelor's in Computer Science & Engineering</span>  
+            🎓 <span className="font-semibold text-blue-400">Bachelor&apos;s in Computer Science & Engineering</span>  
             <br />
             <span className="text-gray-300">IIIT RK Valley, Idupulapaya</span>
             <br />
