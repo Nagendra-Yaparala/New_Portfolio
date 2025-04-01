@@ -1,75 +1,102 @@
 'use client'; // For Next.js app directory
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
+
+// Import images from assets folder
+import ecomRaraa from "../assets/Rara.png";
+import weatherForecast from "../assets/weather.png";
+import vinMov from "../assets/vinmov.png";
+import muttonMaamu from "../assets/mutton.png";
+import studentPortal from "../assets/StudenPortal.png";
 
 const projects = [
   {
     title: "Ecom-Raraa",
-    description:
-      "An e-commerce platform with a sleek UI and dynamic product management features.",
-    git_link: "https://github.com/Nagendrayaparala",
+    description: "A fully functional e-commerce platform featuring an intuitive UI, real-time product filtering, dynamic shopping cart management, and a seamless checkout experience.",
+    git_link: "https://github.com/Nagendra-Yaparala/Ecom_Raraa",
+    live_link: "https://nagendra-yaparala.github.io/Ecom_Raraa/",
+    image: ecomRaraa,
   },
   {
-    title: "Portfolio Website",
-    description: "A personal portfolio showcasing skills, experiences, and projects.",
-    git_link: "https://github.com/Nagendrayaparala/portfolio",
-  },
-  {
-    title: "Task Manager App",
-    description: "A task management tool with CRUD operations and user-friendly design.",
-    git_link: "https://github.com/Nagendrayaparala/task-manager",
+    title: "Student Portal",
+    description: "An interactive edtech platform built during my internship at GoCosmic.ai. It offers personalized learning experiences, progress tracking, real-time course updates, and an admin dashboard for seamless student-teacher interactions.",
+    git_link: "https://github.com/Nagendrayaparala/student-portal",
+    live_link: "",
+    image: studentPortal,
   },
   {
     title: "Weather Forecast",
-    description: "A real-time weather forecast app using external APIs.",
+    description: "A real-time weather forecast application that fetches data from external APIs. It provides temperature details, humidity levels, wind speed, and dynamic weather conditions based on user location or search queries.",
     git_link: "https://github.com/Nagendrayaparala/weather-forecast",
+    live_link: "",
+    image: weatherForecast,
   },
   {
     title: "VinMov",
-    description: "A real-time music player app using external APIs.",
-    git_link: "https://github.com/Nagendrayaparala/weather-forecast",
+    description: "A modern music streaming application that fetches and plays music from external APIs. It includes search functionality, playlists, and a responsive design for a seamless music experience across devices.",
+    git_link: "https://github.com/Nagendra-Yaparala/Music_Player",
+    live_link: "https://nagendra-yaparala.github.io/Music_Player/",
+    image: vinMov,
   },
   {
-    title: "AspireGOV",
-    description: "A real-time application for Government job aspirants using external APIs.",
-    git_link: "https://github.com/Nagendrayaparala/weather-forecast",
+    title: "Mutton Maamu",
+    description: "An online meat delivery platform with an easy-to-use interface, secure payment integration, and real-time order tracking. The website ensures a great user experience for customers purchasing fresh mutton online.",
+    git_link: "https://github.com/Nagendra-Yaparala/mutton_maamu_frontend",
+    live_link: "https://mutton-maamu-frontend-9gng-h8skxoh91.vercel.app/",
+    image: muttonMaamu,
   },
 ];
 
 const ProjectCard = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-20 px-6">
-      <h1 className="text-4xl font-extrabold text-yellow-300 text-center mb-12">
-        Projects
+    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20 px-6" id="portfolio">
+      <h1 className="text-5xl font-extrabold text-yellow-400 text-center mb-14 tracking-widest">
+        My Projects
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {projects.map((item, index) => (
           <motion.div
             key={index}
-            className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between hover:shadow-2xl transform transition-transform duration-300 hover:scale-105 relative"
+            className="bg-white/10 border border-gray-700 backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-105 relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            {/* Hover Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-700 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-            <div>
-              <h2 className="text-2xl font-bold text-blue-400 mb-3">
-                {item.title}
-              </h2>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {item.description}
-              </p>
+            <div className="relative w-full h-48 rounded-lg overflow-hidden">
+              <Image
+                src={item.image}
+                alt={item.title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
             </div>
-            <a
-              href={item.git_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 bg-gradient-to-r from-green-500 to-blue-500 text-white text-center py-2 px-4 rounded-md font-medium hover:from-blue-500 hover:to-green-500 transition-all duration-300"
-            >
-              View Code
-            </a>
+            <div className="mt-4">
+              <h2 className="text-2xl font-semibold text-blue-400">{item.title}</h2>
+              <p className="text-gray-300 text-sm leading-relaxed mt-2">{item.description}</p>
+            </div>
+            <div className="mt-6 flex gap-4">
+              <a
+                href={item.git_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 bg-gradient-to-r from-green-500 to-blue-500 text-white text-center py-2 rounded-lg font-semibold hover:from-blue-500 hover:to-green-500 transition-all duration-300"
+              >
+                View Code
+              </a>
+              {item.live_link && (
+                <a
+                  href={item.live_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-center py-2 rounded-lg font-semibold hover:from-orange-500 hover:to-yellow-500 transition-all duration-300"
+                >
+                  Live Demo
+                </a>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>
