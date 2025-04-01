@@ -51,7 +51,7 @@ const skills = [
 
 const MySkills = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-20 px-6 md:px-20">
+    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-20 px-6 md:px-20" id="my-skills">
       <h1 className="text-4xl font-extrabold text-center mb-12 text-yellow-300">
         My Skills
       </h1>

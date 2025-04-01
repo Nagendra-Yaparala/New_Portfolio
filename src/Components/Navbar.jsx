@@ -1,50 +1,42 @@
-import React, { useState } from 'react';
-import { CiSearch } from "react-icons/ci";
+import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navelements = [
-    { name: 'About', id: 'about' },
-    { name: 'MySkills', id: 'my-skills' },
-    { name: 'Portfolio', id: 'portfolio' },
-    { name: 'Testimonials', id: 'testimonials' },
-    { name: 'Contact', id: 'contact' },
+    { name: "About", id: "about" },
+    { name: "My Skills", id: "my-skills" },
+    { name: "Portfolio", id: "portfolio" },
+    { name: "Testimonials", id: "testimonials" },
+    { name: "Contact", id: "contact" },
   ];
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMenuOpen(false); // Close the menu on mobile
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsMenuOpen(false); // Close menu on mobile
     }
   };
 
   return (
-    <nav className="bg-gray-900 text-white p-4 fixed w-full z-50 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo or Title */}
-        <div className="text-xl font-bold">
-          <span className="text-yellow-400">Nagendra</span> Yaparala
-        </div>
-
-        {/* Menu Button for Mobile */}
-        <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-2xl">
-            {isMenuOpen ? <FiX /> : <FiMenu />}
-          </button>
-        </div>
-
-        {/* Navigation Links */}
-        <ul
-          className={`flex flex-col md:flex-row md:gap-8 gap-4 md:items-center font-semibold absolute md:static bg-gray-900 md:bg-transparent w-full md:w-auto transition-transform duration-300 ${
-            isMenuOpen ? "top-16 left-0 p-4" : "top-[-200px] left-0"
-          }`}
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-900/80 backdrop-blur-md shadow-md">
+      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+        {/* Logo */}
+        <div
+          className="text-2xl font-bold cursor-pointer text-yellow-400 hover:text-yellow-500 transition"
+          onClick={() => handleScroll("home")}
         >
+          Nagendra <span className="text-white">Yaparala</span>
+        </div>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex space-x-8 text-lg font-semibold">
           {navelements.map((item, index) => (
             <li
               key={index}
-              className="hover:text-yellow-600 cursor-pointer text-center md:text-left"
+              className="cursor-pointer text-white hover:text-yellow-400 transition duration-300"
               onClick={() => handleScroll(item.id)}
             >
               {item.name}
@@ -52,15 +44,28 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Search Bar */}
-        <div className="hidden md:flex items-center gap-2">
-          <CiSearch className="text-2xl text-yellow-400" />
-          <input
-            type="text"
-            name="search"
-            placeholder="Search"
-            className="focus:outline-none text-black bg-gray-200 rounded-md p-2 w-48"
-          />
+        {/* Mobile Menu Button */}
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-2xl text-white">
+          {isMenuOpen ? <FiX /> : <FiMenu />}
+        </button>
+
+        {/* Mobile Menu */}
+        <div
+          className={`absolute top-16 left-0 w-full bg-gray-900/95 backdrop-blur-md transform ${
+            isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+          } transition-all duration-500 ease-in-out md:hidden`}
+        >
+          <ul className="flex flex-col items-center space-y-4 py-6">
+            {navelements.map((item, index) => (
+              <li
+                key={index}
+                className="cursor-pointer text-white hover:text-yellow-400 text-lg transition duration-300"
+                onClick={() => handleScroll(item.id)}
+              >
+                {item.name}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </nav>

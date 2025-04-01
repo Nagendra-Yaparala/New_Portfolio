@@ -54,7 +54,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-20 px-6">
+    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-20 px-6"  id="testimonials">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-extrabold text-yellow-300 mb-12 text-center">
           Experience

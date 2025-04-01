@@ -22,15 +22,24 @@ const Contact = () => {
     e.preventDefault();
     setIsSending(true);
     setSendStatus("");
-
+  
     try {
-      const result = await emailjs.sendForm(
+      const templateParams = {
+        name: formData.name,
+        user_email: formData.email, // Use user_email instead of email
+        message: formData.message,
+        reply_to: formData.email, // Set reply_to so replies go to the user
+      };
+  
+      const result = await emailjs.send(
         "service_4ua1bwo", // EmailJS Service ID
         "template_9xeeu0u", // EmailJS Template ID
-        e.target, // The form data
+        templateParams, // The form data
         "12ZWrVWKdze9AnrKG" // EmailJS User ID
       );
-
+  
+      console.log(result);
+  
       if (result.text === "OK") {
         setSendStatus("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" }); // Reset form fields
@@ -44,9 +53,10 @@ const Contact = () => {
       setIsSending(false);
     }
   };
+  
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-16 px-6 md:px-20">
+    <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-16 px-6 md:px-20" id="contact">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Section */}
         <motion.div
